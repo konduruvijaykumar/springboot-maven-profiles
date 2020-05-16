@@ -16,3 +16,18 @@ mvn spring-boot:run -Dspring-boot.run.profiles=default
 mvn spring-boot:run -Dspring-boot.run.profiles=dev
 mvn spring-boot:run -Dspring-boot.run.profiles=test
 mvn spring-boot:run -Dspring-boot.run.profiles=prod
+
+
+# Activate spring profile with maven profile
+# for default dev profile
+mvn install
+java -jar ./target/springboot-profiles-maven-config-0.0.1-SNAPSHOT.jar
+# Can even try as below for default dev profile
+mvn install -P dev
+java -jar ./target/springboot-profiles-maven-config-0.0.1-SNAPSHOT.jar
+
+mvn install -P test
+java -jar ./target/springboot-profiles-maven-config-0.0.1-SNAPSHOT.jar
+
+mvn install -P prod
+java -jar ./target/springboot-profiles-maven-config-0.0.1-SNAPSHOT.jar
