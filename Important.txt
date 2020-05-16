@@ -1,0 +1,18 @@
+# Starting spring boot application jar file with different profiles
+# https://www.baeldung.com/spring-profiles
+
+java -jar ./target/springboot-profiles-maven-config-0.0.1-SNAPSHOT.jar
+# Can even try as below for default profile
+java -jar -Dspring.profiles.active=default ./target/springboot-profiles-maven-config-0.0.1-SNAPSHOT.jar
+java -jar -Dspring.profiles.active=dev ./target/springboot-profiles-maven-config-0.0.1-SNAPSHOT.jar
+java -jar -Dspring.profiles.active=test ./target/springboot-profiles-maven-config-0.0.1-SNAPSHOT.jar
+java -jar -Dspring.profiles.active=prod ./target/springboot-profiles-maven-config-0.0.1-SNAPSHOT.jar
+
+
+# Using maven
+mvn spring-boot:run
+# Can even try as below for default profile
+mvn spring-boot:run -Dspring-boot.run.profiles=default
+mvn spring-boot:run -Dspring-boot.run.profiles=dev
+mvn spring-boot:run -Dspring-boot.run.profiles=test
+mvn spring-boot:run -Dspring-boot.run.profiles=prod
